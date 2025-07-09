@@ -26,10 +26,18 @@ import area from './utils/circle';
 console.log(PI);
 console.log(area(7));
 
-// ✏️ Esercizio 4 - Import con Alias
+// ✏️ Esercizio 4 - Import Named con Alias
 // importa capitalize da stringUtils.ts con alias cap
 // stampare cap("ciao")
 
 import { capitalize as cap } from './utils/stringUtils';
 
 console.log(cap('ciao'));
+
+// ✏️ Esercizio 5 - Importazione Default con Alias
+// importa formatDate da formatter.ts come alias fmt
+// stampare fmt(new Date("2025-09-07")) 
+
+import fmt from './utils/formatter';
+
+console.log(fmt(new Date('2025-09-07')));
