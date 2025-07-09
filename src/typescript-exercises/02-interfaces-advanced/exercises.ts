@@ -37,13 +37,24 @@ const product: Product = {
 // product.id = 4; [commentato per errore Typescript => id di sola lettura, non può essere modificato]
 
 // ✏️ Esercizio 3 – Estendere un’interfaccia (creare un’interfaccia che eredita da un’altra)
-// Crea un’interfaccia Person con:
-// name: string
-// Crea un’interfaccia Employee che estende Person, aggiungendo:
-// role: string
+// Crea un’interfaccia Person con: name
+// Crea un’interfaccia Employee che estende Person, aggiungendo: role
 // Crea un oggetto Employee valido.
 
+interface Person {
+    name: string
+}
 
+interface Employee extends Person {
+    role: string
+}
+
+const employee: Employee = {
+    name: 'Danilo',
+    role: 'Designer'
+}
+
+console.log(employee);
 
 // ✏️ Esercizio 4 – Estensione + Opzionale + Readonly (combinare tutte le funzionalità viste)
 // Crea un’interfaccia BaseUser con:
