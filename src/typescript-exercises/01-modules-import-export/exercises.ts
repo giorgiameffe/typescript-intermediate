@@ -14,3 +14,15 @@ console.log(multiply(4, 5));
 import greet from './utils/greet';
 
 console.log(greet('Giorgia'));
+
+// ✏️ Esercizio 3 - Named + Default Export insieme
+// Importa area come default e PI come named da circle.ts
+// - calcola area
+// - stampa PI
+
+import { PI } from './utils/circle';
+import area from './utils/circle';
+
+console.log(PI);
+console.log(area(7));
+
