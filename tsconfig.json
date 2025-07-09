@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "ES2020", /* Specifica la versione JavaScript di destinazione per il codice compilato. */
+    "module": "commonjs", /* Definisce il sistema di moduli per il codice JavaScript generato (comune per Node.js). */
+    "rootDir": "./src", /* Indica la cartella principale dei tuoi file TypeScript sorgente. */
+    "outDir": "./dist", /* Specifica la cartella dove verranno salvati i file JavaScript compilati. */
+    "strict": true, /* Abilita un set completo di regole di controllo dei tipi rigorose. Altamente consigliato! */
+    "esModuleInterop": true, /* Migliora l'interoperabilità tra i moduli CommonJS e ES. */
+    "forceConsistentCasingInFileNames": true, /* Assicura che la maiuscola/minuscola nei nomi dei file sia sempre coerente per gli import. */
+    "skipLibCheck": true /* Salta il controllo dei tipi nei file di dichiarazione delle librerie (.d.ts) per velocizzare la compilazione. */
+  },
+  "include": [
+    "src/**/*" /* Include tutti i file TypeScript nella cartella 'src' e nelle sue sottocartelle per la compilazione. */
+  ],
+  "exclude": [
+    "node_modules", /* Esclude la cartella 'node_modules' dalla compilazione. */
+    "**/*.spec.ts" /* (Opzionale) Esclude i file di test dalla compilazione, se usi l'estensione .spec.ts per i tuoi test. */
+  ]
+}
