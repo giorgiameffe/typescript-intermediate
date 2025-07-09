@@ -19,17 +19,22 @@ const userTwo: User = {
 console.log(userOne);
 console.log(userTwo);
 
-
-
-
 // ✏️ Esercizio 2 – Proprietà readonly
-// Crea un’interfaccia chiamata Product e aggiungi due proprietà:
-// id (di tipo number, readonly)
-// name (di tipo string)
-// Crea un oggetto Product valido.
+// Crea un’interfaccia chiamata Product e aggiungi due proprietà: id (readonly) e name
+// Crea un oggetto Product.
 // Prova a modificare id e verifica che TypeScript segnali un errore.
 
+interface Product {
+    readonly id: number,
+    name: string
+}
 
+const product: Product = {
+    id: 3,
+    name: 'Stampante'
+}
+
+// product.id = 4; [commentato per errore Typescript => id di sola lettura, non può essere modificato]
 
 // ✏️ Esercizio 3 – Estendere un’interfaccia (creare un’interfaccia che eredita da un’altra)
 // Crea un’interfaccia Person con:
