@@ -17,8 +17,8 @@ console.log(greet('Giorgia'));
 
 // ✏️ Esercizio 3 - Named + Default Export insieme
 // Importa area come default e PI come named da circle.ts
-// - stampa PI
-// - calcola area
+// stampa PI
+// calcola area
 
 import { PI } from './utils/circle';
 import area from './utils/circle';
@@ -26,3 +26,10 @@ import area from './utils/circle';
 console.log(PI);
 console.log(area(7));
 
+// ✏️ Esercizio 4 - Import con Alias
+// importa capitalize da stringUtils.ts con alias cap
+// stampare cap("ciao")
+
+import { capitalize as cap } from './utils/stringUtils';
+
+console.log(cap('ciao'));
