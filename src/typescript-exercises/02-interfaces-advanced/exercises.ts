@@ -57,15 +57,32 @@ const employee: Employee = {
 console.log(employee);
 
 // ✏️ Esercizio 4 – Estensione + Opzionale + Readonly (combinare tutte le funzionalità viste)
-// Crea un’interfaccia BaseUser con:
-// id: number (readonly)
-// username: string
-// Crea un’interfaccia PremiumUser che estende BaseUser e aggiunge:
-// membership: "gold" | "silver" | "bronze" (opzionale)
+// Crea un’interfaccia BaseUser con: id (readonly) e username
+// Crea un’interfaccia PremiumUser che estende BaseUser e aggiunge: membership ["gold" | "silver" | "bronze" (opzionale)]
 // Crea due oggetti PremiumUser: uno con membership e uno senza.
 
+interface BaseUser {
+    readonly id: number,
+    username: string
+}
 
+interface PremiumUser extends BaseUser {
+    membership?: 'gold' | 'silver' | 'bronze'
+}
 
+const userWithoutMembership: PremiumUser = {
+    id: 1,
+    username: 'sabry77'
+}
+
+const userWithMemberShip: PremiumUser = {
+    id: 2,
+    username: 'vale89',
+    membership: 'gold'
+}
+
+console.log(userWithoutMembership);
+console.log(userWithMemberShip);
 
 // ✏️ Esercizio 5 – Interfaccia come tipo per funzione (usare un’interfaccia per definire i parametri di una funzione)
 // Crea un’interfaccia Book con:
