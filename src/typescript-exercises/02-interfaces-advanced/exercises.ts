@@ -85,13 +85,28 @@ console.log(userWithoutMembership);
 console.log(userWithMemberShip);
 
 // ✏️ Esercizio 5 – Interfaccia come tipo per funzione (usare un’interfaccia per definire i parametri di una funzione)
-// Crea un’interfaccia Book con:
-// title: string
-// author: string
-// publishedYear: number (opzionale)
-// Scrivi una funzione printBookInfo che stampa il titolo e l’autore
-// se presente, stampa anche l’anno di pubblicazione
+// Crea un’interfaccia Book con: title, author e publishedYear (opzionale)
+// Scrivi una funzione printBookInfo che 
+// stampa il titolo e l’autore 
+// e se presente, stampa anche l’anno di pubblicazione
 // Chiama la funzione con due oggetti: uno con l’anno e uno senza.
+
+interface Book {
+    title: string,
+    author: string,
+    publishedYear?: number
+}
+
+function printBook(book: Book): void {
+    console.log(`Titolo: ${book.title}, Autore: ${book.author}`)
+
+    if (book.publishedYear) {
+        console.log(`Titolo: ${book.title}, Autore: ${book.author}, Anno di pubblicazione: ${book.publishedYear}`)
+    }
+}
+
+printBook({ title: 'Orgoglio e Pregiudizio', author: 'Jane Austen' })
+printBook({ title: 'Romeo e Giulietta', author: 'William Shakespeare', publishedYear: 1597 });
 
 
 
