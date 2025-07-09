@@ -1,4 +1,4 @@
-// Esporta area come default export e PI come named export
+// Esporta PI come named export e area come default export
 
 export const PI = 3.14;
 
