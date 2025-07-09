@@ -5,7 +5,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
-    "1": "node dist/typescript-exercises/01-modules-import-export/exercises.js"
+    "1": "node dist/typescript-exercises/01-modules-import-export/exercises.js",
+    "2": "node dist/typescript-exercises/02-interfaces-advanced/exercises.js"
   },
   "keywords": [],
   "author": "",

@@ -1,8 +1,24 @@
 // ✏️ Esercizio 1 – Proprietà opzionale
-// Crea un’interfaccia chiamata User e aggiungi due proprietà:
-// name (obbligatoria, di tipo string)
-// age (opzionale, di tipo number)
+// Crea un’interfaccia chiamata User e aggiungi due proprietà: name (obbligatoria), age (opzionale)
 // Crea due oggetti User, uno con age, uno senza.
+
+interface User {
+    name: string,
+    age?: number
+}
+
+const userOne: User = {
+    name: 'Valentina',
+    age: 22
+}
+
+const userTwo: User = {
+    name: 'Martyn'
+}
+
+console.log(userOne);
+console.log(userTwo);
+
 
 
 
