@@ -6,7 +6,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "1": "node dist/typescript-exercises/01-modules-import-export/exercises.js",
-    "2": "node dist/typescript-exercises/02-interfaces-advanced/exercises.js"
+    "2": "node dist/typescript-exercises/02-interfaces-advanced/exercises.js",
+    "3": "node dist/typescript-exercises/03-narrowing-type-guards/exercises.js"
   },
   "keywords": [],
   "author": "",
