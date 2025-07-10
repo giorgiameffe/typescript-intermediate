@@ -54,7 +54,7 @@ function printStringOrArray(x: string | string[]): void {
 printStringOrArray('Cane');
 printStringOrArray(['Cocomero', 'Mango', 'Albicocca']);
 
-// ✏️ Esercizio 4 - Valore nullo o numero
+// ✏️ Esercizio 4 - Valore nullo o numero (narrowing)
 // Scrivi una funzione chiamata displayValue che riceve un parametro input di tipo number | null.
 // Se input è null, stampa "Nessun valore".
 // Se è un numero, stampa "Valore: " seguito dal numero.
@@ -70,3 +70,30 @@ function displayValue(input: number | null): void {
 
 displayValue(null);
 displayValue(8);
+
+// ✏️ Esercizio 5 - Booleano o array di numeri (narrowing)
+// Scrivi una funzione chiamata processData che riceve un parametro data di tipo boolean | number[].
+// Se data è un booleano, stampa "Attivo" se è true, o "Inattivo" se è false.
+// Se è un array di numeri, stampa "Somma: " seguito dalla somma di tutti i numeri nell’array.
+
+function processData(data: boolean | number[]) {
+
+    if (typeof data === 'boolean') {
+        data === true ? console.log('Attivo') : console.log('Inattivo');
+    } else {
+
+        let sum = 0;
+
+        for (let i = 0; i < data.length; i++) {
+
+            const currentData = data[i];
+            sum += currentData;
+        }
+
+        console.log('Somma:', sum)
+    }
+}
+
+processData(true);
+processData(false);
+processData([3, 5, 5]);
