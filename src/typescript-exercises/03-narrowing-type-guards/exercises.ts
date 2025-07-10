@@ -189,3 +189,38 @@ function isCar(value: unknown): value is Car {
 
 console.log(isCar({ model: 'Lancia-y', year: 2016 }));
 console.log(isCar({ model: 'Panda' }));
+
+// ✏️ Esercizio 5 – Funzione che riceve un valore generico e usa type guard
+// Definisci un tipo Animal con proprietà: species e age
+// Scrivi una funzione checkAnimal che prende un parametro value: unknown 
+// e restituisce value is Animal verificando se value ha le proprietà giuste.
+// Poi scrivi una funzione printAnimalInfo che prende un parametro data: unknown.
+// Se data è un Animal (usando la type guard checkAnimal), stampa "Specie: ... Età: ...".
+// Altrimenti stampa "Non è un animale valido".
+
+type Animal = {
+    species: string,
+    age: number
+}
+
+function checkAnimal(value: unknown): value is Animal {
+
+    return typeof value === 'object'
+        && value !== null
+        && 'species' in value
+        && typeof value.species === 'string'
+        && 'age' in value
+        && typeof value.age === 'number'
+}
+
+function printAnimalInfo(data: unknown): void {
+
+    if (checkAnimal(data)) {
+        console.log(`Specie: ${data.species},Età: ${data.age}`)
+    } else {
+        console.log('Non è un animale valido')
+    }
+}
+
+printAnimalInfo({ species: 'Gatto', age: 5 });
+printAnimalInfo({ species: 'Cane', age: '3' });
