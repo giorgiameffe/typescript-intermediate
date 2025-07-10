@@ -148,3 +148,20 @@ console.log(isNumberArray([2, 9, 'penna']));
 // Definisci il tipo Person con una proprietà name stringa.
 // Scrivi una funzione isPerson che prende un valore di tipo unknown e ritorna value is Person.
 // La funzione deve verificare che il valore sia un oggetto non nullo con una proprietà name di tipo stringa.
+
+{
+    type Person = {
+        name: string
+    }
+
+    function isPerson(value: unknown): value is Person {
+
+        return typeof value === 'object'
+            && value !== null
+            && 'name' in value
+            && typeof value.name === 'string';
+    }
+
+    console.log(isPerson({ name: 'Debora' }));
+    console.log(isPerson({ name: 25 }));
+}
