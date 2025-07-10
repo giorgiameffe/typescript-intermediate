@@ -97,3 +97,22 @@ function processData(data: boolean | number[]) {
 processData(true);
 processData(false);
 processData([3, 5, 5]);
+
+// Con reduce
+
+{
+    function processData(data: boolean | number[]) {
+        if (typeof data === 'boolean') {
+            console.log(data ? 'Attivo' : 'Inattivo');
+        } else {
+            const sum = data.reduce((acc, curr) => acc + curr, 0);
+            console.log('Somma:', sum);
+        }
+    }
+
+    processData(true);
+    processData(false);
+    processData([3, 5, 5]);
+
+}
+
