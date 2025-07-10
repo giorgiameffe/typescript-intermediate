@@ -53,3 +53,20 @@ function printStringOrArray(x: string | string[]): void {
 
 printStringOrArray('Cane');
 printStringOrArray(['Cocomero', 'Mango', 'Albicocca']);
+
+// ✏️ Esercizio 4 - Valore nullo o numero
+// Scrivi una funzione chiamata displayValue che riceve un parametro input di tipo number | null.
+// Se input è null, stampa "Nessun valore".
+// Se è un numero, stampa "Valore: " seguito dal numero.
+
+function displayValue(input: number | null): void {
+
+    if (input === null) {
+        console.log('Nessun valore');
+    } else {
+        console.log('Valore:', input)
+    }
+}
+
+displayValue(null);
+displayValue(8);
