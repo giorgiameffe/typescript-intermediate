@@ -41,3 +41,15 @@ checkType(5);
 // oppure array di stringhe (string[]).
 // Se x è una stringa, stampa "Singola stringa: " seguito dal valore di x.
 // Se x è un array di stringhe, stampa "Array di stringhe con lunghezza: " seguito dalla lunghezza dell’array.
+
+function printStringOrArray(x: string | string[]): void {
+
+    if (typeof x === 'string') {
+        console.log('Singola stringa:', x);
+    } else {
+        console.log('Array di stringhe con lunghezza:', x.length);
+    }
+}
+
+printStringOrArray('Cane');
+printStringOrArray(['Cocomero', 'Mango', 'Albicocca']);
