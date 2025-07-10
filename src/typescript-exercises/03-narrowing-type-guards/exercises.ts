@@ -165,3 +165,27 @@ console.log(isNumberArray([2, 9, 'penna']));
     console.log(isPerson({ name: 'Debora' }));
     console.log(isPerson({ name: 25 }));
 }
+
+// ✏️ Esercizio 4 – Type guard per Car
+// Definisci un tipo Car con due proprietà: model di tipo string e year di tipo number
+// Scrivi una funzione isCar che prende un valore di tipo unknown e ritorna value is Car.
+// La funzione deve verificare che il valore sia un oggetto non nullo,
+// che abbia le proprietà model (stringa) e year (numero).
+
+type Car = {
+    model: string,
+    year: number
+}
+
+function isCar(value: unknown): value is Car {
+
+    return typeof value === 'object'
+        && value !== null
+        && 'model' in value
+        && typeof value.model === 'string'
+        && 'year' in value
+        && typeof value.year === 'number'
+}
+
+console.log(isCar({ model: 'Lancia-y', year: 2016 }));
+console.log(isCar({ model: 'Panda' }));
