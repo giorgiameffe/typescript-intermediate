@@ -1,3 +1,5 @@
+// Classi base
+
 // ✏️ Esercizio 1: Crea una classe Person
 // Crea una classe Persona e aggiungi le proprietà: name e age
 // Crea un metodo sayHi() che stampa: "Ciao, mi chiamo {name} e ho {age} anni".
@@ -167,4 +169,31 @@ piano.play();
     console.log(book.getTitle());
     book.setTitle('Twilight 2');
     console.log(book.getTitle());
+}
+
+// Modificatori di Accesso (public, private, protected)
+
+// ✏️ Esercizio 1: public
+// Crea una classe Book con una proprietà title dichiarata public.
+// Crea un metodo showTitle() che stampa il titolo.
+// Istanzia la classe, modifica il titolo dall’esterno e stampa il titolo prima e dopo la modifica.
+
+{
+    class Book {
+        public title: string;
+
+        constructor(title: string) {
+            this.title = title;
+        }
+
+        showTitle(): void {
+            console.log(`Titolo del libro: ${this.title}`)
+        }
+    }
+
+    const book = new Book('Piccole donne');
+    book.showTitle();
+
+    book.title = 'Piccole donne crescono';
+    book.showTitle();
 }
