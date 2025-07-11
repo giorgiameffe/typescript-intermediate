@@ -197,3 +197,26 @@ piano.play();
     book.title = 'Piccole donne crescono';
     book.showTitle();
 }
+
+// ✏️ Esercizio 2: private
+// Crea una classe Account con una proprietà private password.
+// Crea un metodo checkPassword(input: string): boolean che ritorna true se la password corrisponde, false altrimenti.
+// Prova a leggere la password dall’esterno (dovrebbe dare errore).
+
+class Account {
+    private password: string;
+
+    constructor(password: string) {
+        this.password = password;
+    }
+
+    checkPassword(input: string): boolean {
+
+        return input === this.password;
+    }
+}
+
+const accountPassword = new Account('ciao');
+console.log(accountPassword.checkPassword('ciao'));
+
+// console.log(account.password); // Errore: proprietà 'password' è privata e non accessibile dall’esterno
