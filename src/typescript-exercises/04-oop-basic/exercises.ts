@@ -76,15 +76,69 @@
     carOne.info();
 }
 
-// ✏️ Esercizio 3: Crea una classe Animale con ereditarietà
-// Crea una classe Animale con proprietà: nome
-// Aggiungi un metodo faVerso() che stampa: "L'animale fa un verso generico".
-// Crea una sottoclasse Cane che estende Animale:
-// Override del metodo faVerso() per stampare: "Bau!"
+// ✏️ Esercizio 4: Crea una classe Animal con ereditarietà
+// Crea una classe Animal con proprietà: name
+// Aggiungi un metodo sound() che stampa: "L'animale fa un verso generico".
+// Crea una sottoclasse Dog che estende Animal:
+// Override del metodo sound() per stampare: "Bau!"
 
+{
+    class Animal {
+        name: string;
 
+        constructor(name: string) {
+            this.name = name;
+        }
 
-// ✏️ Esercizio 4 — Classe Libro con getter/setter
+        sound(): void {
+            console.log("L'animale fa un verso generico")
+        }
+    }
+
+    class Dog extends Animal {
+        sound(): void {
+            console.log('Bau');
+        }
+    }
+
+    const animal = new Animal('Felix');
+    animal.sound();
+    const dog = new Dog('Lilli');
+    dog.sound();
+}
+
+// ✏️ Esercizio: Ereditarietà con strumenti musicali
+// Crea una classe Instrument con una proprietà: name
+// Nel costruttore inizializza name.
+// Aggiungi un metodo play() che stampa: "Lo strumento suona una melodia generica."
+// Crea una sottoclasse Piano che estende Instrument.
+// Override il metodo play() nella classe Piano per stampare: "Il piano suona note dolci e armoniose."
+// Crea un’istanza di Instrument e una di Piano e chiama il metodo play() su entrambe.
+
+class Instrument {
+    name: string;
+
+    constructor(name: string) {
+        this.name = name;
+    }
+
+    play(): void {
+        console.log('Lo strumento suona una melodia generica');
+    }
+}
+
+class Piano extends Instrument {
+    play(): void {
+        console.log('Il piano suona note dolci e armoniose');
+    }
+}
+
+const instrument = new Instrument('Chitarra');
+instrument.play();
+const piano = new Piano('Piano');
+piano.play();
+
+// ✏️ Esercizio 6 — Classe Libro con getter/setter
 // Crea una classe Libro con una proprietà titolo.
 // Includi un costruttore che inizializza il titolo.
 // Aggiungi due metodi:
