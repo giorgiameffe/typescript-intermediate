@@ -12,7 +12,7 @@
             this.age = age;
         }
 
-        sayHi() {
+        sayHi(): void {
             console.log(`Ciao, mi chiamo ${this.name} e ho ${this.age} anni`)
         }
     }
@@ -24,8 +24,32 @@
 
 // ✏️ Esercizio 2: Aggiungi un metodo per aggiornare l'età
 // Aggiungi alla classe Persona un metodo:
-// invecchia(anni: number) che aumenta l'età della persona.
+// grow(anni: number) che aumenta l'età della persona.
 
+{
+    class Person {
+        name: string;
+        age: number;
+
+        constructor(name: string, age: number) {
+            this.name = name;
+            this.age = age
+        }
+
+        sayHi(): void {
+            console.log(`Ciao, mi chiamo ${this.name} e ho ${this.age} anni`)
+        }
+
+        grow(ages: number): void {
+            this.age += ages
+        }
+    }
+
+    const personOne = new Person('Mario', 22);
+    personOne.sayHi();
+    personOne.grow(3);
+    personOne.sayHi();
+}
 
 // ✏️ Esercizio 3: Crea una classe Animale con ereditarietà
 // Crea una classe Animale con proprietà: nome
