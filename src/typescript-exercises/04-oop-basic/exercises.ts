@@ -1,6 +1,6 @@
 // Classi base
 
-// ✏️ Esercizio 1: Crea una classe Person
+// ✏️ Esercizio 1 - Crea una classe Person
 // Crea una classe Persona e aggiungi le proprietà: name e age
 // Crea un metodo sayHi() che stampa: "Ciao, mi chiamo {name} e ho {age} anni".
 
@@ -24,7 +24,7 @@
 
 }
 
-// ✏️ Esercizio 2: Aggiungi un metodo per aggiornare l'età
+// ✏️ Esercizio 2 - Aggiungi un metodo per aggiornare l'età
 // Aggiungi alla classe Persona un metodo:
 // grow(anni: number) che aumenta l'età della persona.
 
@@ -53,7 +53,7 @@
     personOne.sayHi();
 }
 
-// ✏️ Esercizio 3: Crea una classe Car
+// ✏️ Esercizio 3 - Crea una classe Car
 // La classe si chiama Car e deve avere due proprietà:
 // brand (marca dell’auto, es. "Fiat")
 // year (anno di immatricolazione, es. 2020)
@@ -78,7 +78,7 @@
     carOne.info();
 }
 
-// ✏️ Esercizio 4: Crea una classe Animal con ereditarietà
+// ✏️ Esercizio 4 - Crea una classe Animal con ereditarietà
 // Crea una classe Animal con proprietà: name
 // Aggiungi un metodo sound() che stampa: "L'animale fa un verso generico".
 // Crea una sottoclasse Dog che estende Animal:
@@ -109,7 +109,7 @@
     dog.sound();
 }
 
-// ✏️ Esercizio 5: Ereditarietà con strumenti musicali
+// ✏️ Esercizio 5 - Ereditarietà con strumenti musicali
 // Crea una classe Instrument con una proprietà: name
 // Nel costruttore inizializza name.
 // Aggiungi un metodo play() che stampa: "Lo strumento suona una melodia generica."
@@ -173,7 +173,7 @@ piano.play();
 
 // Modificatori di Accesso (public, private, protected)
 
-// ✏️ Esercizio 1: public
+// ✏️ Esercizio 1 - public
 // Crea una classe Book con una proprietà title dichiarata public.
 // Crea un metodo showTitle() che stampa il titolo.
 // Istanzia la classe, modifica il titolo dall’esterno e stampa il titolo prima e dopo la modifica.
@@ -198,7 +198,7 @@ piano.play();
     book.showTitle();
 }
 
-// ✏️ Esercizio 2: private
+// ✏️ Esercizio 2 - private
 // Crea una classe Account con una proprietà private password.
 // Crea un metodo checkPassword(input: string): boolean che ritorna true se la password corrisponde, false altrimenti.
 // Prova a leggere la password dall’esterno (dovrebbe dare errore).
@@ -221,7 +221,7 @@ console.log(accountPassword.checkPassword('ciao'));
 
 // console.log(account.password); // Errore: proprietà 'password' è privata e non accessibile dall’esterno
 
-// ✏️ Esercizio 3: protected
+// ✏️ Esercizio 3 - protected
 // Crea una classe Person con una proprietà protected ssn (codice fiscale).
 // Crea una sottoclasse Employee che estende Person.
 // Nella sottoclasse, crea un metodo showSSN() che stampa il codice fiscale.
@@ -248,4 +248,46 @@ console.log(accountPassword.checkPassword('ciao'));
     employee.showSsn();
 
     // console.log(employee.ssn); // Errore: proprietà 'ssn' è protected e non accessibile dall’esterno
+}
+
+// ✏️ Esercizio 4 - Modificatori combinati
+// Crea una classe User con:
+
+// una proprietà username pubblica
+// una proprietà email privata
+// una proprietà role protetta
+
+// Aggiungi un metodo getEmail() che restituisce l’email
+// Crea una sottoclasse Admin che estende User
+// Crea un metodo describeRole() che stampa il ruolo dell’utente
+// Crea un oggetto Admin, prova ad accedere a tutte le proprietà da fuori e verifica i risultati
+
+{
+    class User {
+        public username: string;
+        private email: string;
+        protected role: string;
+
+        constructor(username: string, email: string, role: string) {
+            this.username = username;
+            this.email = email;
+            this.role = role;
+        }
+
+        getEmail(): string {
+            return this.email;
+        }
+    }
+
+    class Admin extends User {
+
+        describeRole(): void {
+            console.log(this.role)
+        }
+    }
+
+    const userAdmin: Admin = new Admin('Giorgia', 'giorgia@ciao.it', 'Sviluppatore');
+    console.log(userAdmin.username);
+    console.log(userAdmin.getEmail());
+    userAdmin.describeRole();
 }
