@@ -220,3 +220,32 @@ const accountPassword = new Account('ciao');
 console.log(accountPassword.checkPassword('ciao'));
 
 // console.log(account.password); // Errore: proprietà 'password' è privata e non accessibile dall’esterno
+
+// ✏️ Esercizio 3: protected
+// Crea una classe Person con una proprietà protected ssn (codice fiscale).
+// Crea una sottoclasse Employee che estende Person.
+// Nella sottoclasse, crea un metodo showSSN() che stampa il codice fiscale.
+// Istanzia Employee e chiama il metodo showSSN().
+// Prova a leggere ssn dall’esterno (dovrebbe dare errore).
+
+{
+    class Person {
+        protected ssn: string;
+
+        constructor(ssn: string) {
+            this.ssn = ssn;
+        }
+    }
+
+    class Employee extends Person {
+
+        showSsn(): void {
+            console.log(`Il codice fiscale è: ${this.ssn}`);
+        }
+    }
+
+    const employee = new Employee('GHVNEVE5687498NG');
+    employee.showSsn();
+
+    // console.log(employee.ssn); // Errore: proprietà 'ssn' è protected e non accessibile dall’esterno
+}
