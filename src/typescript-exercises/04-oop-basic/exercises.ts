@@ -107,7 +107,7 @@
     dog.sound();
 }
 
-// ✏️ Esercizio: Ereditarietà con strumenti musicali
+// ✏️ Esercizio 5: Ereditarietà con strumenti musicali
 // Crea una classe Instrument con una proprietà: name
 // Nel costruttore inizializza name.
 // Aggiungi un metodo play() che stampa: "Lo strumento suona una melodia generica."
@@ -138,9 +138,33 @@ instrument.play();
 const piano = new Piano('Piano');
 piano.play();
 
-// ✏️ Esercizio 6 — Classe Libro con getter/setter
-// Crea una classe Libro con una proprietà titolo.
+// ✏️ Esercizio 6 — Classe Book con getter/setter
+// Crea una classe Book con una proprietà title.
 // Includi un costruttore che inizializza il titolo.
 // Aggiungi due metodi:
-// getTitolo() che restituisce il titolo del libro.
-// setTitolo(nuovoTitolo: string) che aggiorna il titolo.
+// getTitle() che restituisce il titolo del libro.
+// setTitle(newTitle: string) che aggiorna il titolo.
+
+{
+    class Book {
+        title: string;
+
+        constructor(title: string) {
+            this.title = title;
+        }
+
+        getTitle(): string {
+            return this.title
+        }
+
+        setTitle(newTitle: string): void {
+            this.title = newTitle;
+        }
+
+    }
+
+    const book = new Book('Twilight');
+    console.log(book.getTitle());
+    book.setTitle('Twilight 2');
+    console.log(book.getTitle());
+}
