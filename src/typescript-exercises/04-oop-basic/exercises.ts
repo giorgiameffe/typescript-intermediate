@@ -342,13 +342,13 @@ console.log(accountPassword.checkPassword('ciao'));
 
 {
     class Animal {
-        speak() {
+        speak(): void {
             console.log("L'animale fa un verso generico");
         }
     }
 
     class Cat extends Animal {
-        override speak() {
+        override speak(): void {
             super.speak()
             console.log('Miao!')
         }
@@ -361,22 +361,41 @@ console.log(accountPassword.checkPassword('ciao'));
     cat.speak();
 }
 
-// ✏️ Esercizio 3 — Logger personalizzato
-// Crea una classe Logger con un metodo log(message: string).
-// Estendi la classe in TimestampLogger, dove il log include la data/ora prima del messaggio.
-// Usa super.log() per stampare il messaggio formattato.
 
+// ✏️ Esercizio 3 — Esercizio 3 — Proprietà Protetta e Uso di super
+// Crea una classe Vehicle che rappresenta un veicolo generico. Questa classe deve avere:
+// Una proprietà protetta chiamata wheels, che rappresenta il numero di ruote del veicolo.
+// Un costruttore che permetta di impostare il numero di ruote al momento della creazione di un'istanza della classe.
+// Un metodo chiamato describe(), che stampi un messaggio indicando quante ruote ha il veicolo. 
 
+// Crea una sottoclasse Bicycle che estende la classe Vehicle. La classe Bicycle deve:
+// Usare il costruttore della classe base Vehicle tramite il comando super 
+// per impostare il numero di ruote a 2 (tipico per una bicicletta).
+// Avere un metodo describe() che chiama il metodo describe() della classe base (super.describe()) 
+// per stampare prima il numero di ruote e poi aggiungere una descrizione specifica.
 
-// ✏️ Esercizio 4 — Proprietà protetta e super
-// Crea una classe Vehicle con una proprietà protetta wheels.
-// Estendi la classe con Bicycle, e usa super per impostare le ruote a 2.
-// Aggiungi un metodo describe() che usa super.describe().
+class Vehicle {
+    protected wheels: number;
 
+    constructor(wheels: number) {
+        this.wheels = wheels;
+    }
 
+    describe(): void {
+        console.log(`Il veicolo ha ${this.wheels} ruote`)
+    }
+}
 
-// ✏️ Esercizio 5 — Ereditarietà multilivello con super
-// Crea tre classi: Person, Employee, Manager.
-// Person ha name e un metodo describe().
-// Employee estende Person e aggiunge jobTitle, sovrascrivendo describe().
-// Manager estende Employee e aggiunge department, sovrascrivendo describe() usando super.describe().
+class Bicycle extends Vehicle {
+    constructor() {
+        super(2);
+    }
+
+    override describe(): void {
+        super.describe();
+        console.log('La bicicletta è una mountain bike.')
+    }
+}
+
+const bicycle = new Bicycle();
+bicycle.describe();
