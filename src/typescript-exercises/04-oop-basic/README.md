@@ -85,6 +85,6 @@ npm run 4
 
 * Definire e istanziare **classi TypeScript**
 * Gestire correttamente proprietà e metodi
-* Applicare **ereditarietà e overriding**
+* Applicare **ereditarietà, super e overriding**
 * Usare **getter/setter** per incapsulare l’accesso ai dati
 * Comprendere e applicare i modificatori di accesso (`public`, `private`, `protected`)
