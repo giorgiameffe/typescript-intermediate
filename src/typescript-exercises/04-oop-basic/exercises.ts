@@ -399,3 +399,60 @@ class Bicycle extends Vehicle {
 
 const bicycle = new Bicycle();
 bicycle.describe();
+
+// ✏️ Esercizio 4 — Ereditarietà multilivello con super
+// Crea tre classi: Person, Employee, Manager.
+// Person ha name e un metodo describe().
+// Employee estende Person e aggiunge jobTitle, sovrascrivendo describe() usando super.describe().
+// Manager estende Employee e aggiunge department, sovrascrivendo describe() usando super.describe().
+
+{
+    class Person {
+        name: string;
+
+        constructor(name: string) {
+            this.name = name;
+        }
+
+        describe(): void {
+            console.log(`Il nome della persona è ${this.name}.`)
+        }
+    }
+
+    class Employee extends Person {
+        jobTitle: string;
+
+        constructor(name: string, jobTitle: string) {
+            super(name);
+            this.jobTitle = jobTitle;
+        }
+
+        override describe(): void {
+            super.describe();
+            console.log(`Il suo lavoro è ${this.jobTitle}.`)
+        }
+    }
+
+    class Manager extends Employee {
+        department: string;
+
+        constructor(name: string, jobTitle: string, department: string) {
+            super(name, jobTitle);
+            this.department = department;
+        }
+
+        override describe(): void {
+            super.describe();
+            console.log(`Il dipartimento è ${this.department}.`)
+        }
+    }
+
+    const person = new Person('Laura');
+    person.describe();
+
+    const employee = new Employee('Riccardo', 'Sviluppatore');
+    employee.describe();
+
+    const manager = new Manager('Bianca', 'Manager', 'Marketing');
+    manager.describe();
+}
