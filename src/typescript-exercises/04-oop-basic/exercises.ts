@@ -340,7 +340,26 @@ console.log(accountPassword.checkPassword('ciao'));
 // Crea una sottoclasse Cat che estende Animal, e sovrascrive il metodo speak()
 // utilizzando super.speak() prima di stampare "Miao!".
 
+{
+    class Animal {
+        speak() {
+            console.log("L'animale fa un verso generico");
+        }
+    }
 
+    class Cat extends Animal {
+        override speak() {
+            super.speak()
+            console.log('Miao!')
+        }
+    }
+
+    const animal = new Animal();
+    animal.speak();
+
+    const cat = new Cat();
+    cat.speak();
+}
 
 // ✏️ Esercizio 3 — Logger personalizzato
 // Crea una classe Logger con un metodo log(message: string).
