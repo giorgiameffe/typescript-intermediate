@@ -291,3 +291,73 @@ console.log(accountPassword.checkPassword('ciao'));
     console.log(userAdmin.getEmail());
     userAdmin.describeRole();
 }
+
+// Super
+
+// ✏️ Esercizio 1 — Estensione con costruttore
+// Crea una classe Product con le proprietà name e price.
+// Estendi la classe con una sottoclasse Book, aggiungendo la proprietà author.
+// Usa super per richiamare il costruttore del genitore.
+// Aggiungi un metodo info() in entrambe le classi.
+
+{
+    class Product {
+        name: string;
+        price: number;
+
+        constructor(name: string, price: number) {
+            this.name = name;
+            this.price = price;
+        }
+
+        info(): void {
+            console.log(`Il ${this.name} costa ${this.price}€`);
+        }
+    }
+
+    class Book extends Product {
+        author: string;
+
+        constructor(name: string, price: number, author: string) {
+            super(name, price);
+            this.author = author;
+        }
+
+        override info(): void {
+            console.log(`Il libro ${this.name} di "${this.author}" costa ${this.price}€`);
+        }
+    }
+
+    const product = new Product('televisore', 500);
+    product.info();
+
+    const book = new Book('Il vecchio e il mare', 12, 'Ernest Hemingway');
+    book.info()
+}
+
+// ✏️ Esercizio 2 — Metodo con super
+// Crea una classe Animal con un metodo speak().
+// Crea una sottoclasse Cat che estende Animal, e sovrascrive il metodo speak()
+// utilizzando super.speak() prima di stampare "Miao!".
+
+
+
+// ✏️ Esercizio 3 — Logger personalizzato
+// Crea una classe Logger con un metodo log(message: string).
+// Estendi la classe in TimestampLogger, dove il log include la data/ora prima del messaggio.
+// Usa super.log() per stampare il messaggio formattato.
+
+
+
+// ✏️ Esercizio 4 — Proprietà protetta e super
+// Crea una classe Vehicle con una proprietà protetta wheels.
+// Estendi la classe con Bicycle, e usa super per impostare le ruote a 2.
+// Aggiungi un metodo describe() che usa super.describe().
+
+
+
+// ✏️ Esercizio 5 — Ereditarietà multilivello con super
+// Crea tre classi: Person, Employee, Manager.
+// Person ha name e un metodo describe().
+// Employee estende Person e aggiunge jobTitle, sovrascrivendo describe().
+// Manager estende Employee e aggiunge department, sovrascrivendo describe() usando super.describe().
