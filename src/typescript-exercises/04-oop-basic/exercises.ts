@@ -363,16 +363,13 @@ console.log(accountPassword.checkPassword('ciao'));
 
 
 // ✏️ Esercizio 3 — Esercizio 3 — Proprietà Protetta e Uso di super
-// Crea una classe Vehicle che rappresenta un veicolo generico. Questa classe deve avere:
-// Una proprietà protetta chiamata wheels, che rappresenta il numero di ruote del veicolo.
-// Un costruttore che permetta di impostare il numero di ruote al momento della creazione di un'istanza della classe.
-// Un metodo chiamato describe(), che stampi un messaggio indicando quante ruote ha il veicolo. 
-
-// Crea una sottoclasse Bicycle che estende la classe Vehicle. La classe Bicycle deve:
-// Usare il costruttore della classe base Vehicle tramite il comando super 
-// per impostare il numero di ruote a 2 (tipico per una bicicletta).
-// Avere un metodo describe() che chiama il metodo describe() della classe base (super.describe()) 
-// per stampare prima il numero di ruote e poi aggiungere una descrizione specifica.
+// Crea una classe Vehicle con:
+// Una proprietà protetta wheels (numero di ruote).
+// Un costruttore che imposta wheels.
+// Un metodo describe() che stampa quante ruote ha.
+// Crea una sottoclasse Bicycle che:
+// Chiama il costruttore della superclasse con super(2).
+// Ha un metodo describe() che chiama super.describe() e aggiunge una descrizione extra.
 
 class Vehicle {
     protected wheels: number;
@@ -455,4 +452,68 @@ bicycle.describe();
 
     const manager = new Manager('Bianca', 'Manager', 'Marketing');
     manager.describe();
+}
+
+// ✏️ Esercizio 5 — Ereditarietà multilivello con super e modificatori di accesso (Animali)
+// Crea una classe base Animal con:
+// una proprietà protetta name (string),
+// un metodo pubblico describe() che stampa un messaggio.
+
+// Crea una sottoclasse Bird che estende Animal, aggiungendo:
+// una proprietà privata canFly (boolean),
+// un metodo pubblico describe() che sovrascrive il metodo base, chiamando super.describe() e stampa un messaggio.
+
+// Crea una sottoclasse Parrot che estende Bird, aggiungendo:
+// una proprietà pubblica vocabularySize (number),
+// un metodo pubblico describe() che sovrascrive il metodo base, chiamando super.describe() e poi stampa un messaggio.
+
+{
+    class Animal {
+        protected name: string;
+
+        constructor(name: string) {
+            this.name = name;
+        }
+
+        describe(): void {
+            console.log(`Questo animale è un ${this.name}`);
+        }
+    }
+
+    class Bird extends Animal {
+        private canFly: boolean;
+
+        constructor(name: string, canFly: boolean) {
+            super(name);
+            this.canFly = canFly;
+        }
+
+        override describe(): void {
+            super.describe();
+            console.log(`Può volare? ${this.canFly}`);
+        }
+    }
+
+    class Parrot extends Bird {
+        public vocabularySize: number;
+
+        constructor(name: string, canFly: boolean, vocabularySize: number) {
+            super(name, canFly);
+            this.vocabularySize = vocabularySize;
+        }
+
+        override describe(): void {
+            super.describe();
+            console.log(`Conosce ${this.vocabularySize} parole.`)
+        }
+    }
+
+    const animal = new Animal('gatto');
+    animal.describe();
+
+    const bird = new Bird('uccello', true);
+    bird.describe();
+
+    const parrot = new Parrot('pappagallo', true, 20);
+    parrot.describe();
 }
