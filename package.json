@@ -8,7 +8,8 @@
     "1": "node dist/typescript-exercises/01-modules-import-export/exercises.js",
     "2": "node dist/typescript-exercises/02-interfaces-advanced/exercises.js",
     "3": "node dist/typescript-exercises/03-narrowing-type-guards/exercises.js",
-    "4": "node dist/typescript-exercises/04-oop-basic/exercises.js"
+    "4": "node dist/typescript-exercises/04-oop-basic/exercises.js",
+    "5": "node dist/typescript-exercises/05-type-assertions/exercises.js"
   },
   "keywords": [],
   "author": "",
