@@ -18,7 +18,9 @@ console.log(number);
 // Hai una variabile qualcosa di tipo unknown che contiene una stringa.
 // Usa una type assertion per trattarla come string e stampa la sua lunghezza.
 
-
+const something: unknown = 'Giappone';
+const stringLength = (something as string).length;
+console.log(stringLength);
 
 // ✏️ Esercizio 4 — Type assertion su elemento HTML
 // Hai un elemento HTML creato con document.createElement("input").
