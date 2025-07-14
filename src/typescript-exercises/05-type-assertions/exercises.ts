@@ -26,11 +26,15 @@ console.log(stringLength);
 // Hai un elemento HTML creato con document.createElement("input").
 // Usa una type assertion per trattarlo come HTMLInputElement e imposta il valore del campo input a "Mario".
 
-const elementHtml = document.createElement('input');
-const inputHtml = elementHtml as HTMLInputElement;
-inputHtml.value = 'Mario';
-console.log(inputHtml.value);
+// const elementHtml = document.createElement('input');
+// const inputHtml = elementHtml as HTMLInputElement;
+// inputHtml.value = 'Mario';
+// console.log(inputHtml.value);
 
 // ✏️ Esercizio 5 — Type assertion su oggetto
 // Hai un oggetto vuoto che stai "forzando" a essere del tipo { nome: string }.
 // Usa la type assertion per dichiarare il tipo, poi assegna un valore al campo nome e stampalo.
+
+const obj = {} as { name: string };
+obj.name = 'Claudia';
+console.log(obj.name);
