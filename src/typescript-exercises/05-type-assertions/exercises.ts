@@ -32,7 +32,7 @@ console.log(stringLength);
 // console.log(inputHtml.value);
 
 // ✏️ Esercizio 5 — Type assertion su oggetto
-// Hai un oggetto vuoto che stai "forzando" a essere del tipo { nome: string }.
+// Hai un oggetto vuoto che stai "forzando" a essere del tipo { name: string }.
 // Usa la type assertion per dichiarare il tipo, poi assegna un valore al campo nome e stampalo.
 
 const obj = {} as { name: string };
