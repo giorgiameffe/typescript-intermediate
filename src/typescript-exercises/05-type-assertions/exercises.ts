@@ -10,6 +10,9 @@ console.log(valueLength);
 // Hai una variabile numero di tipo any che contiene un numero.
 // Usa una type assertion per trattarla come number e stampane il valore.
 
+const valueNumber: any = 17;
+const number = valueNumber as number;
+console.log(number);
 
 // ✏️ Esercizio 3 — Type assertion su unknown stringa
 // Hai una variabile qualcosa di tipo unknown che contiene una stringa.
