@@ -113,3 +113,71 @@
     printPermissions(userOne);
     printPermissions(userTwo);
 }
+
+// ✏️ Esercizio 4 – Tipo con più livelli e array di utenti
+// Crea tre tipi:
+// BasicInfo con proprietà id e name
+// Contact con proprietà email e phone
+// Role con proprietà isAdmin e canEdit
+// Crea un tipo FullUser come intersezione tra BasicInfo, Contact e Role.
+// Crea un array di FullUser con almeno 3 utenti.
+// Scrivi una funzione printUserDetails che prende un array di FullUser e stampa per ogni utente:
+// id, name, email, telefono, se è admin e se può modificare.
+
+type BasicInfo = {
+    id: number,
+    name: string
+}
+
+type Contact = {
+    email: string,
+    phone: string
+}
+
+type Role = {
+    isAdmin: boolean,
+    canEdit: boolean
+}
+
+type FullUser = BasicInfo & Contact & Role;
+
+const arrayOne: FullUser[] = [
+    {
+        id: 1,
+        name: 'Giorgia',
+        email: 'giorgia@ciao.com',
+        phone: '36475954090',
+        isAdmin: true,
+        canEdit: true
+    },
+    {
+        id: 2,
+        name: 'Michela',
+        email: 'michy@ciao.com',
+        phone: '36475954090',
+        isAdmin: false,
+        canEdit: false
+    },
+    {
+        id: 3,
+        name: 'Francesco',
+        email: 'franc@ciao.com',
+        phone: '36475954090',
+        isAdmin: true,
+        canEdit: true
+    }
+]
+
+function printUserDetails(array: FullUser[]): void {
+
+    array.forEach((element) => {
+        console.log(`Id: ${element.id}, Nome: ${element.name}, Email: ${element.email}, Telefono: ${element.phone}, E'Admin? ${element.isAdmin}, Può modificare: ${element.canEdit} `)
+    })
+}
+
+printUserDetails(arrayOne);
+
+// ✏️ Esercizio 5 – Filtro utenti admin da array
+// Usa il tipo FullUser dell’esercizio precedente.
+// Scrivi una funzione getAdmins che prende un array di FullUser e restituisce solo gli utenti con isAdmin === true.
+// Usa getAdmins per filtrare gli admin e stampare solo il nome e l'email.
