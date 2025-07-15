@@ -181,3 +181,14 @@ printUserDetails(arrayOne);
 // Usa il tipo FullUser dell’esercizio precedente.
 // Scrivi una funzione getAdmins che prende un array di FullUser e restituisce solo gli utenti con isAdmin === true.
 // Usa getAdmins per filtrare gli admin e stampare solo il nome e l'email.
+
+function getAdmins(array: FullUser[]): FullUser[] {
+
+    return array.filter(element => element.isAdmin === true);
+}
+
+console.log(getAdmins(arrayOne));
+
+getAdmins(arrayOne).forEach((element => {
+    console.log(`Nome: ${element.name}, Email: ${element.email}`);
+}))
