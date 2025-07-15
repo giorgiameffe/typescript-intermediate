@@ -42,19 +42,19 @@ console.log(numberBox.value);
 
 // Esercizio 4 – Coppia generica
 // Crea un tipo Pair<T, U> che rappresenta una coppia di valori (first e second).
-// Crea una funzione makePair che restituisce un oggetto di tipo Pair<T, U>.
+// Crea una funzione chiamata makePair che accetta due parametri generici a: T e b: U
+// e restituisce un oggetto { first: a, second: b } del tipo Pair<T, U>
 // Usala con diverse combinazioni di tipi.
 
+type Pair<T, U> = {
+    first: T,
+    second: U
+}
 
+function makePair<T, U>(a: T, b: U): Pair<T, U> {
+    return { first: a, second: b };
+}
 
-// Esercizio 5 – Funzione con vincolo generico (extends)
-// Crea un’interfaccia HasLength con length: number.
-// Scrivi una funzione logLength<T extends HasLength>(item: T) che stampa item.length.
-// Usala con una stringa e con un array.
-
-
-
-// Esercizio 6 – Generic con default
-// Crea un’interfaccia ApiResponse<T = string> con status e data.
-// Usa ApiResponse senza specificare il tipo (usa string di default).
-// Usa ApiResponse<number> specificamente.
+console.log(makePair('nome', 24));
+console.log(makePair(33, true));
+console.log(makePair([1, 2, 3, 4], 'cognome'));
