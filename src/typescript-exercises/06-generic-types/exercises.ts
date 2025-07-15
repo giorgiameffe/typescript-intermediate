@@ -24,7 +24,21 @@ console.log(getFirstElement([7, 28, 9, 29]));
 // Definisci un'interfaccia Box<T> che abbia una proprietà value di tipo T.
 // Crea due variabili: stringBox (con string) e numberBox (con number).
 
+interface Box<T> {
+    value: T;
+}
 
+const stringBox: Box<string> = {
+    value: 'giardino'
+}
+
+console.log(stringBox.value);
+
+const numberBox: Box<number> = {
+    value: 13
+}
+
+console.log(numberBox.value);
 
 // Esercizio 4 – Coppia generica
 // Crea un tipo Pair<T, U> che rappresenta una coppia di valori (first e second).
