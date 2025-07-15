@@ -9,7 +9,8 @@
     "2": "node dist/typescript-exercises/02-interfaces-advanced/exercises.js",
     "3": "node dist/typescript-exercises/03-narrowing-type-guards/exercises.js",
     "4": "node dist/typescript-exercises/04-oop/exercises.js",
-    "5": "node dist/typescript-exercises/05-type-assertions/exercises.js"
+    "5": "node dist/typescript-exercises/05-type-assertions/exercises.js",
+    "6": "node dist/typescript-exercises/06-generic-types/exercises.js"
   },
   "keywords": [],
   "author": "",

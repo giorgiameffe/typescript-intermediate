@@ -2,8 +2,12 @@
 // Crea una funzione identity che prende un parametro di tipo generico T e lo restituisce.
 // Chiama la funzione con una stringa e con un numero.
 
+function identity<T>(parameter: T): T {
+    return parameter;
+}
 
-
+console.log(identity('Acqua'));
+console.log(identity(45));
 
 // Esercizio 2 – Array generico
 // Scrivi una funzione getFirstElement<T> che accetta un array di tipo T[] e restituisce il primo elemento.
