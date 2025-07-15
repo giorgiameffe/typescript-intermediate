@@ -58,3 +58,24 @@ function makePair<T, U>(a: T, b: U): Pair<T, U> {
 console.log(makePair('nome', 24));
 console.log(makePair(33, true));
 console.log(makePair([1, 2, 3, 4], 'cognome'));
+
+// ✏️ Esercizio 5 – Oggetto con chiave e valore generici
+// Crea un tipo generico KeyValue<K, V> che rappresenta un oggetto con:
+// una proprietà key di tipo K
+// una proprietà value di tipo V
+// Crea una funzione chiamata createKeyValue che accetta due parametri generici k: K e v: V
+// e restituisce un oggetto { key: k, value: v } del tipo KeyValue<K, V>
+// Testa la funzione con: una stringa e un numero, un numero e un booleano, una stringa e un array
+
+type KeyValue<K, V> = {
+    key: K,
+    value: V
+}
+
+function createKeyValue<K, V>(k: K, v: V): KeyValue<K, V> {
+    return { key: k, value: v };
+}
+
+console.log(createKeyValue('estate', 25));
+console.log(createKeyValue(18, false));
+console.log(createKeyValue('Ciao, come stai?', [3, 8, 6]));
