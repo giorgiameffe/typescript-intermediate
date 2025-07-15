@@ -517,3 +517,42 @@ bicycle.describe();
     const parrot = new Parrot('pappagallo', true, 20);
     parrot.describe();
 }
+
+// instanceof
+
+// Esercizio 1 – Verifica di classe semplice
+// Crea una classe Dog con una proprietà name.
+// Crea una funzione isDog che prende un oggetto e restituisce true se è un'istanza di Dog, altrimenti false.
+// Testa la funzione con due oggetti: uno Dog, uno normale.
+
+class Dog {
+    name: string;
+
+    constructor(name: string) {
+        this.name = name;
+    }
+}
+
+function isDog(obj: any): boolean {
+
+    return obj instanceof Dog;
+}
+
+const dogOne = new Dog('Luna');
+console.log(isDog(dogOne));
+
+const dogTwo = { name: 'Fido' };
+console.log(isDog(dogTwo));
+
+
+// Esercizio 2 – Ereditarietà e instanceof
+// Crea una classe base Animal e una classe derivata Cat.
+// Crea un oggetto kitty di tipo Cat.
+// Verifica con instanceof se kitty è un Cat e anche un Animal.
+
+
+
+// Esercizio 3 – Tipo personalizzato con narrowing
+// Crea due classi: Admin e User, entrambe con una proprietà name.
+// Scrivi una funzione printUserInfo che riceve user: Admin | User.
+// Se è un Admin, stampa "Admin: <name>", altrimenti "User: <name>", usando instanceof.
