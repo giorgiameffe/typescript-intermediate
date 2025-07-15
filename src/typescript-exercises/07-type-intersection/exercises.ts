@@ -184,7 +184,7 @@ printUserDetails(arrayOne);
 
 function getAdmins(array: FullUser[]): FullUser[] {
 
-    return array.filter(element => element.isAdmin === true);
+    return array.filter(element => element.isAdmin);
 }
 
 console.log(getAdmins(arrayOne));
