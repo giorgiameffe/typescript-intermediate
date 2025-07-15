@@ -13,8 +13,12 @@ console.log(identity(45));
 // Scrivi una funzione getFirstElement<T> che accetta un array di tipo T[] e restituisce il primo elemento.
 // Testala con array di stringhe e numeri.
 
+function getFirstElement<T>(array: T[]): T {
+    return array[0];
+}
 
-
+console.log(getFirstElement(['rosso', 'blu', 'giallo']));
+console.log(getFirstElement([7, 28, 9, 29]));
 
 // Esercizio 3 – Tipo generico personalizzato
 // Definisci un'interfaccia Box<T> che abbia una proprietà value di tipo T.
