@@ -37,24 +37,24 @@ npm install typescript --save-dev
 ```json
 "scripts": {
   "build": "tsc",
-  "typeassertion": "node dist/typescript-exercises/type-assertion/exercises.js"
+  "5": "node dist/typescript-exercises/05-type-assertions/exercises.js"
 }
 ```
 
 * Crea il file **TypeScript** in cui inserire gli esercizi:
 
 ```
-src/typescript-exercises/type-assertion/exercises.ts
+src/typescript-exercises/05-type-assertions/exercises.ts
 ```
 
-* Inizializza il file di configurazione `tsconfig.json` (se non presente):
+* **Inizializza** il file di configurazione `tsconfig.json` (se non presente):
 
 ```bash
 npx tsc --init
 ```
 
-* Assicurati che il file compilato venga salvato nella cartella `dist/`
-* Verifica che nel `tsconfig.json` siano presenti queste opzioni:
+* **Verifica** che il file compilato venga salvato nella cartella `dist/`
+* Assicurati che nel `tsconfig.json` siano presenti queste opzioni:
 
 ```json
 {
@@ -75,7 +75,7 @@ npm run build
 * Esegui lo script degli esercizi:
 
 ```bash
-npm run typeassertion
+npm run 5
 ```
 
 ---

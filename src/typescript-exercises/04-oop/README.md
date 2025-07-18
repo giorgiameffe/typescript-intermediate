@@ -41,23 +41,23 @@ npm install typescript --save-dev
 ```json
 "scripts": {
   "build": "tsc",
-  "4": "node dist/typescript-exercises/04-oop-basic/exercises.js"
+  "4": "node dist/typescript-exercises/04-oop/exercises.js"
 }
 ```
 
 * Crea il file **TypeScript**:
 
 ```
-src/typescript-exercises/04-oop-basic/exercises.ts
+src/typescript-exercises/04-oop/exercises.ts
 ```
 
-* Inizializza il file di configurazione `tsconfig.json` TypeScript (se non presente):
+* **Inizializza** il file di configurazione `tsconfig.json` TypeScript (se non presente):
 
 ```
 npx tsc --init
 ```
 
-* Verifica che il file compilato venga salvato nella cartella `dist/`
+* **Verifica** che il file compilato venga salvato nella cartella `dist/`
 
 * Assicurati che nel `tsconfig.json` siano presenti queste opzioni (o simili):
 
