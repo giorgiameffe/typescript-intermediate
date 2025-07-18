@@ -1,4 +1,4 @@
-# 📘 Esercizi TypeScript – Tipi Generici, Funzioni e Interfacce
+# 📘 Esercizi TypeScript – Generic Types
 
 Questa raccolta di esercizi è pensata per approfondire l’uso dei **tipi generici (Generics)** in TypeScript, incluse funzioni, interfacce, tipi personalizzati e composizioni generiche.
 

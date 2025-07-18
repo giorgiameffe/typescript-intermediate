@@ -1,4 +1,4 @@
-# 📘 Esercizi TypeScript – Tipi di Intersezione (`&`) e Oggetti Compositi
+# 📘 Esercizi TypeScript – Type Intersection (`&`)
 
 Questa raccolta di esercizi è pensata per esercitarsi con i **tipi di intersezione (`&`)** in TypeScript, utili per combinare più strutture tipizzate in un’unica entità complessa e flessibile.
 
